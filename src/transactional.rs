@@ -1,3 +1,4 @@
+use log::debug;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -144,6 +145,7 @@ mod test {
   use crate::*;
 
   use dotenv::dotenv;
+  use log::debug;
   use serde::Serialize;
 
   #[derive(Debug, Serialize)]

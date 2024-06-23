@@ -2,7 +2,7 @@
 name = "sendinblue"
 version = "0.2.1"
 authors = ["Arco Hsieh <yiyezhihen@gmail.com>", "Rosehsu <rosehsu47@gmail.com>"]
-edition = "2018"
+edition = "2021"
 license = "MIT"
 keywords = ["api"]
 description = "SendinBlue's API v3 Rust unofficial Library"
@@ -10,13 +10,16 @@ homepage = "https://github.com/WF-Engineering/sendinblue"
 repository = "https://github.com/WF-Engineering/sendinblue"
 
 [dependencies]
-base64 = "0.12.0"
-itertools = "0.9"
+base64 = "0.22.1"
+itertools = "0.13.0"
 log = "0.4"
-reqwest = { version = "0.10", features = ["json"] }
+reqwest = { version = "0.12.5", default-features = false, features = [
+    "json",
+    "rustls-tls",
+] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [dev-dependencies]
-env_logger = "0.7.0"
+env_logger = "0.11.3"
 dotenv = "0.15.0"
