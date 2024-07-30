@@ -1,4 +1,4 @@
-const BASE_URL: &str = "https://api.sendinblue.com/v3";
+const BASE_URL: &str = "https://api.brevo.com/v3";
 
 #[derive(Debug, Clone)]
 pub struct Client {

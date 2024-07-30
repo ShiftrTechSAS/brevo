@@ -5,4 +5,4 @@ mod transactional;
 pub use mailer::Mailer;
 pub use transactional::*;
 
-pub type Sendinblue = client::Client;
+pub type Brevo = client::Client;

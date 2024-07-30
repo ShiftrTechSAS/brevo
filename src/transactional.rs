@@ -2,7 +2,7 @@ use log::debug;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-use crate::{mailer::Mailer, Sendinblue};
+use crate::{mailer::Mailer, Brevo};
 
 #[derive(Debug, Serialize, Deserialize, Default)]
 #[serde(rename_all = "camelCase")]
@@ -117,7 +117,7 @@ pub struct TransactionalResp {
   pub message_id: String,
 }
 
-impl Sendinblue {
+impl Brevo {
   pub async fn send_transactional_email(
     &self,
     body: TransactionalBody,
@@ -144,7 +144,7 @@ impl Sendinblue {
 mod test {
   use crate::*;
 
-  use dotenv::dotenv;
+  use dotenvy::dotenv;
   use log::debug;
   use serde::Serialize;
 

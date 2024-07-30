@@ -1,13 +1,13 @@
 [package]
-name = "sendinblue"
-version = "0.2.1"
+name = "brevo"
+version = "0.2.2"
 authors = ["Arco Hsieh <yiyezhihen@gmail.com>", "Rosehsu <rosehsu47@gmail.com>"]
 edition = "2021"
 license = "MIT"
 keywords = ["api"]
 description = "SendinBlue's API v3 Rust unofficial Library"
-homepage = "https://github.com/WF-Engineering/sendinblue"
-repository = "https://github.com/WF-Engineering/sendinblue"
+homepage = "https://github.com/ShiftrTechSAS/brevo"
+repository = "https://github.com/ShiftrTechSAS/brevo"
 
 [dependencies]
 base64 = "0.22.1"
@@ -22,4 +22,4 @@ serde_json = "1.0"
 
 [dev-dependencies]
 env_logger = "0.11.3"
-dotenv = "0.15.0"
+dotenvy = "0.15.7"
