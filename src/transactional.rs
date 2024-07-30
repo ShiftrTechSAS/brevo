@@ -129,14 +129,21 @@ impl Brevo {
 
     let url = format!("{}/smtp/email", self.server_url);
 
-    reqwest::Client::new()
+    let res = reqwest::Client::new()
       .post(&url)
       .header("api-key", self.api_key.clone())
       .json(&body)
       .send()
-      .await?
-      .json()
-      .await
+      .await?;
+
+    let text = res.text().await;
+    debug!("response BREVO: {text:?}");
+
+    Ok(TransactionalResp {
+      message_id: "".to_string(),
+    })
+    //.json()
+    //.await;
   }
 }
 
