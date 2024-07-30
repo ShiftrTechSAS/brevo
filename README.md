@@ -2,6 +2,8 @@
 
 ```rust
 #[tokio::main]
+use brevo::{Brevo, Mailer, TransactionalBody};
+
 async fn main() -> Result<(), Box<dyn std::error::Eror>> {
     // Email sender.
     let sender = Mailer::new("full name", "sender@example.org");
