@@ -129,23 +129,14 @@ impl Brevo {
 
     let url = format!("{}/smtp/email", self.server_url);
 
-    let res = reqwest::Client::new()
+    reqwest::Client::new()
       .post(&url)
       .header("api-key", self.api_key.clone())
       .json(&body)
       .send()
+      .await?
+      .json()
       .await;
-
-    match res {
-      Ok(response) => response.json().await,
-      Err(error) => {
-        debug!("BREVO ERROR: {error}");
-        Err(error)
-      }
-    }
-
-    //.json()
-    //.await;
   }
 }
 
