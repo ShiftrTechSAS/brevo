@@ -136,7 +136,7 @@ impl Brevo {
       .send()
       .await?
       .json()
-      .await;
+      .await
   }
 }
 
