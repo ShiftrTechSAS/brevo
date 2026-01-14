@@ -114,7 +114,7 @@ impl TransactionalBodyBuilder {
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TransactionalResp {
-  pub message_id: String,
+  pub message_id: Option<String>,
 }
 
 impl Brevo {
