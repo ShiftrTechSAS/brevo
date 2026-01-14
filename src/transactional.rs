@@ -134,14 +134,16 @@ impl Brevo {
       .header("api-key", self.api_key.clone())
       .json(&body)
       .send()
-      .await?;
+      .await;
 
-    let text = res.text().await;
-    debug!("response BREVO: {text:?}");
+    match res {
+      Ok(response) => response.json().await,
+      Err(error) => {
+        debug!("BREVO ERROR: {error}");
+        Err(error)
+      }
+    }
 
-    Ok(TransactionalResp {
-      message_id: "".to_string(),
-    })
     //.json()
     //.await;
   }
