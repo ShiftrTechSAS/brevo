@@ -128,9 +128,13 @@ impl Brevo {
     );
 
     let url = format!("{}/smtp/email", self.server_url);
+    debug!("BASE URL BREVO: {url}");
+    debug!("API KEY BREVO: {}", &self.api_key);
 
     reqwest::Client::new()
       .post(&url)
+      .header("Accept", "application/json")
+      .header("Content-Type", "application/json")
       .header("api-key", self.api_key.clone())
       .json(&body)
       .send()
