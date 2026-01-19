@@ -115,6 +115,8 @@ impl TransactionalBodyBuilder {
 #[serde(rename_all = "camelCase")]
 pub struct TransactionalResp {
   pub message_id: Option<String>,
+  pub code: Option<String>,
+  pub message: Option<String>,
 }
 
 impl Brevo {
